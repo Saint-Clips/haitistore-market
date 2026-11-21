@@ -1,0 +1,626 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Haïtistore / Market | Acheter et vendre en Haïti</title>
+
+    <meta name="description" content="Haïtistore / Market : découvrez des petites annonces en Haïti. Achetez, vendez et trouvez de bonnes opportunités.">
+    <meta name="theme-color" content="#101010">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Haïtistore / Market">
+    <meta property="og:description" content="Achetez, vendez et découvrez des annonces en Haïti.">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101010'/%3E%3Ctext x='32' y='45' font-size='38' font-family='Arial' font-weight='700' text-anchor='middle' fill='%23D6AD55'%3EH%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+    <script src="extras.js" defer></script>
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <a class="brand-banner" href="#accueil" aria-label="Haïtistore / Market - Accueil">
+        <img src="banniere-haitistore.png"
+             alt="Haïtistore / Market - Achetez, vendez, gagnez plus">
+    </a>
+
+    <div class="header-inner">
+
+        <nav class="main-nav" aria-label="Navigation principale">
+            <a class="nav-home" href="#accueil">⌂ Accueil</a>
+            <a href="#annonces">▦ Annonces</a>
+            <a href="#categories">◇ Catégories</a>
+            <a href="#favoris">♡ Favoris</a>
+            <a href="#securite">Sécurité</a>
+            <a class="nav-publish" href="#publier">＋ Publier une annonce</a>
+        </nav>
+
+        <div class="header-tools">
+            <label class="language-control" for="languageSelect">
+                <span aria-hidden="true">🌐</span>
+                <select id="languageSelect" aria-label="Choisir la langue">
+                    <option value="fr">Français</option>
+                    <option value="ht">Kreyòl</option>
+                </select>
+            </label>
+        </div>
+
+    </div>
+
+</header>
+
+<main>
+
+    <!-- ACCUEIL -->
+    <section class="hero" id="accueil">
+        <div class="hero-content">
+
+            <p class="eyebrow" data-i18n="hero_welcome">
+                BIENVENUE SUR HAÏTISTORE / MARKET
+            </p>
+
+            <h1>
+                Achetez et vendez
+                <span data-i18n="hero_title">en toute simplicité.</span>
+            </h1>
+
+            <p class="hero-description" data-i18n="hero_description">
+                La plateforme de petites annonces pour découvrir des produits,
+                proposer vos services et trouver de bonnes opportunités partout en Haïti.
+            </p>
+
+            <ul class="hero-points">
+                <li data-i18n="hero_point1">Navigation simple</li>
+                <li data-i18n="hero_point2">Contact direct avec les vendeurs</li>
+                <li data-i18n="hero_point3">Annonces classées par catégorie</li>
+            </ul>
+
+            <div class="hero-actions">
+                <a class="primary-link" href="#annonces" data-i18n="hero_discover">
+                    Découvrir les annonces
+                </a>
+                <a class="secondary-link" href="#publier" data-i18n="hero_publish">
+                    Publier gratuitement
+                </a>
+            </div>
+
+            <p class="hero-trust">
+                <span aria-hidden="true">✓</span>
+                <span data-i18n="hero_trust">Une plateforme pensée pour les utilisateurs en Haïti.</span>
+            </p>
+
+        </div>
+    </section>
+
+    <!-- BANDEAU DE CONFIANCE -->
+    <section class="trust-strip" aria-label="Informations">
+
+        <div class="trust-item">
+            <span class="trust-icon">⌕</span>
+            <div>
+                <strong data-i18n="trust_search">Recherche facile</strong>
+                <p data-i18n="trust_search_text">Trouvez rapidement une annonce.</p>
+            </div>
+        </div>
+
+        <div class="trust-item">
+            <span class="trust-icon">◎</span>
+            <div>
+                <strong data-i18n="trust_location">Partout en Haïti</strong>
+                <p data-i18n="trust_location_text">Explorez les annonces par ville.</p>
+            </div>
+        </div>
+
+        <div class="trust-item">
+            <span class="trust-icon">✓</span>
+            <div>
+                <strong data-i18n="trust_safety">Conseils de sécurité</strong>
+                <p data-i18n="trust_safety_text">Informez-vous avant chaque transaction.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- CATÉGORIES -->
+    <section class="category-section" id="categories">
+
+        <div class="section-heading compact-heading">
+            <div>
+                <p class="eyebrow" data-i18n="category_eyebrow">EXPLOREZ LE SITE</p>
+                <h2 data-i18n="category_title">Découvrez nos catégories</h2>
+                <p class="section-description" data-i18n="category_description">
+                    Choisissez une catégorie pour découvrir les annonces.
+                </p>
+            </div>
+        </div>
+
+        <div class="category-list" id="categoryList">
+
+            <button class="category-item is-active" type="button" data-category="Toutes" aria-pressed="true">
+                <span class="category-symbol">✦</span>
+                <span data-i18n="cat_all">Toutes</span>
+            </button>
+
+            <button class="category-item" type="button" data-category="Immobilier" aria-pressed="false">
+                <span class="category-symbol">⌂</span>
+                <span data-i18n="cat_real_estate">Immobilier</span>
+            </button>
+
+            <button class="category-item" type="button" data-category="Électronique" aria-pressed="false">
+                <span class="category-symbol">▣</span>
+                <span data-i18n="cat_electronics">Électronique</span>
+            </button>
+
+            <button class="category-item" type="button" data-category="Véhicules" aria-pressed="false">
+                <span class="category-symbol">◈</span>
+                <span data-i18n="cat_vehicles">Véhicules</span>
+            </button>
+
+            <button class="category-item" type="button" data-category="Vêtements" aria-pressed="false">
+                <span class="category-symbol">◇</span>
+                <span data-i18n="cat_clothing">Vêtements</span>
+            </button>
+
+            <button class="category-item" type="button" data-category="Maison" aria-pressed="false">
+                <span class="category-symbol">⌂</span>
+                <span data-i18n="cat_home">Maison</span>
+            </button>
+
+            <button class="category-item" type="button" data-category="Emplois" aria-pressed="false">
+                <span class="category-symbol">▤</span>
+                <span data-i18n="cat_jobs">Emplois</span>
+            </button>
+
+            <button class="category-item" type="button" data-category="Autres" aria-pressed="false">
+                <span class="category-symbol">＋</span>
+                <span data-i18n="cat_other">Autres</span>
+            </button>
+
+        </div>
+    </section>
+
+    <!-- ANNONCES -->
+    <section class="listing-section" id="annonces">
+
+        <div class="section-heading listing-heading">
+            <div>
+                <p class="eyebrow" data-i18n="ads_eyebrow">LES OPPORTUNITÉS DU MOMENT</p>
+                <h2 data-i18n="ads_title">Annonces récentes</h2>
+                <p class="section-description" data-i18n="ads_description">
+                    Découvrez les produits et services proposés.
+                </p>
+            </div>
+
+            <p class="results-count" id="resultsCount" aria-live="polite">
+                Chargement des annonces...
+            </p>
+        </div>
+
+        <div class="tools-row">
+
+            <label class="search-box" for="searchInput">
+                <span aria-hidden="true">⌕</span>
+                <input type="search" id="searchInput"
+                       placeholder="Que recherchez-vous ?"
+                       autocomplete="off">
+            </label>
+
+            <label class="sort-box" for="cityFilter">
+                <span data-i18n="filter_city">Ville :</span>
+                <select id="cityFilter">
+                    <option value="">Toutes</option>
+                </select>
+            </label>
+
+            <label class="sort-box" for="sortAds">
+                <span data-i18n="filter_sort">Trier :</span>
+                <select id="sortAds">
+                    <option value="newest">Plus récentes</option>
+                    <option value="price-asc">Prix croissant</option>
+                    <option value="price-desc">Prix décroissant</option>
+                </select>
+            </label>
+
+        </div>
+
+        <div class="products" id="products" aria-live="polite" aria-busy="false"></div>
+
+    </section>
+
+    <!-- FAVORIS -->
+    <section class="listing-section favorites-section" id="favoris">
+
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow" data-i18n="favorites_eyebrow">VOTRE SÉLECTION</p>
+                <h2 data-i18n="favorites_title">Mes favoris</h2>
+                <p class="section-description" data-i18n="favorites_description">
+                    Retrouvez ici les annonces que vous avez enregistrées.
+                </p>
+            </div>
+        </div>
+
+        <div id="favoriteProducts" class="products" aria-live="polite">
+            <p class="empty-favorites" data-i18n="favorites_empty">
+                Vous n'avez pas encore ajouté d'annonce à vos favoris.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- PUBLICATION -->
+    <section class="publish-section" id="publier">
+
+        <div class="publish-intro">
+
+            <p class="eyebrow" data-i18n="publish_eyebrow">DEVENEZ VENDEUR</p>
+
+            <h2 data-i18n="publish_title">Publiez votre annonce</h2>
+
+            <p data-i18n="publish_description">
+                Présentez votre produit ou votre service aux visiteurs de Haïtistore / Market.
+            </p>
+
+            <div class="publish-benefits">
+                <p>✓ <span data-i18n="benefit_form">Formulaire simple à remplir</span></p>
+                <p>✓ <span data-i18n="benefit_photos">Possibilité d'ajouter plusieurs photos</span></p>
+                <p>✓ <span data-i18n="benefit_manage">Gestion de vos annonces</span></p>
+                <p>✓ <span data-i18n="benefit_contact">Contact direct par WhatsApp</span></p>
+            </div>
+
+            <div class="local-note">
+                <strong data-i18n="local_note_title">Information importante :</strong>
+                <span data-i18n="local_note_text">
+                    cette version utilise le stockage local du navigateur.
+                    Les annonces sont enregistrées sur cet appareil et ne sont
+                    pas encore partagées avec les autres visiteurs.
+                </span>
+            </div>
+
+        </div>
+
+        <form id="publishForm" class="publish-form">
+
+            <div class="form-heading">
+                <h3 data-i18n="form_heading">Informations de l'annonce</h3>
+                <p data-i18n="form_required">Les champs marqués d'un * sont obligatoires.</p>
+            </div>
+
+            <div class="form-grid">
+
+                <div class="form-group full-width">
+                    <label for="adTitle" data-i18n="label_title">Titre de l'annonce *</label>
+                    <input type="text" id="adTitle" name="title" maxlength="90"
+                           placeholder="Ex. : Téléphone Samsung en bon état" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="adCategory" data-i18n="label_category">Catégorie *</label>
+                    <select id="adCategory" name="category" required>
+                        <option value="" data-i18n="choose_category">Choisir une catégorie</option>
+                        <option value="Immobilier">Immobilier</option>
+                        <option value="Électronique">Électronique</option>
+                        <option value="Véhicules">Véhicules</option>
+                        <option value="Vêtements">Vêtements</option>
+                        <option value="Maison">Maison</option>
+                        <option value="Emplois">Emplois</option>
+                        <option value="Autres">Autres</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="adPrice" data-i18n="label_price">Prix (HTG)</label>
+                    <input type="number" id="adPrice" name="price" min="0" step="1"
+                           placeholder="Ex. : 15000">
+                    <small data-i18n="price_hint">Laissez vide si le prix est à discuter.</small>
+                </div>
+
+                <!-- SÉLECTION DES VILLES -->
+                <div class="form-group full-width">
+
+                    <label data-i18n="label_city">
+                        Choisissez jusqu'à 3 villes *
+                    </label>
+
+                    <input
+                        type="search"
+                        id="citySearch"
+                        placeholder="Rechercher une ville..."
+                        autocomplete="off"
+                        aria-label="Rechercher une ville"
+                    >
+
+                    <div id="cityChoices" class="city-choices"></div>
+
+                    <input
+                        type="hidden"
+                        id="adCity"
+                        name="city"
+                        required
+                    >
+
+                    <small id="citySelectionMessage">
+                        Vous pouvez sélectionner jusqu'à 3 villes.
+                    </small>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="adWhatsapp" data-i18n="label_whatsapp">Téléphone WhatsApp</label>
+                    <input type="tel" id="adWhatsapp" name="whatsapp" inputmode="tel"
+                           placeholder="Ex. : 509XXXXXXXX">
+                    <small data-i18n="whatsapp_hint">
+                        Indicatif d'Haïti : 509. Ne partagez que le numéro que vous souhaitez rendre public.
+                    </small>
+                </div>
+
+                <!-- LANGUE DE RÉDACTION -->
+                <div class="form-group full-width">
+                    <label for="adLanguage" data-i18n="label_ad_language">
+                        Langue de rédaction de l'annonce
+                    </label>
+                    <select id="adLanguage" name="adLanguage">
+                        <option value="fr">Français</option>
+                        <option value="ht">Kreyòl ayisyen</option>
+                    </select>
+                    <small data-i18n="ad_language_hint">
+                        Votre annonce sera affichée dans la langue dans laquelle vous l'avez rédigée.
+                    </small>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="adImage" data-i18n="label_images">
+                        Photos du produit (5 maximum) *
+                    </label>
+                    <input type="file" id="adImage" name="images"
+                           accept="image/*" multiple required>
+                    <small data-i18n="images_hint">
+                        Ajoutez des photos claires de votre produit.
+                        Pendant une modification, vous pouvez conserver les anciennes photos.
+                    </small>
+                    <div id="imagePreview" class="image-preview" aria-live="polite"></div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="adDescription" data-i18n="label_description">Description *</label>
+                    <textarea id="adDescription" name="description" rows="5"
+                              maxlength="1200"
+                              placeholder="Décrivez votre produit, son état, ses caractéristiques ou votre service..."
+                              required></textarea>
+
+                    <!-- CONSEILS AU VENDEUR -->
+                    <div class="description-advice">
+                        <strong data-i18n="advice_title">Conseils pour une bonne description</strong>
+                        <p data-i18n="advice_intro">
+                            Pour aider les visiteurs à faire leur choix, pensez à préciser :
+                        </p>
+                        <ul>
+                            <li data-i18n="advice_brand">La marque et le modèle du produit.</li>
+                            <li data-i18n="advice_condition">Son état : neuf, occasion ou à réparer.</li>
+                            <li data-i18n="advice_features">Ses caractéristiques et fonctionnalités.</li>
+                            <li data-i18n="advice_size">Ses dimensions ou sa capacité, si nécessaire.</li>
+                            <li data-i18n="advice_accessories">Les accessoires inclus.</li>
+                            <li data-i18n="advice_defects">Les défauts ou réparations éventuels.</li>
+                            <li data-i18n="advice_delivery">Les possibilités de livraison ou de récupération.</li>
+                        </ul>
+                        <small data-i18n="advice_note">
+                            Ces conseils sont facultatifs : rédigez librement votre annonce.
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group full-width consent-row">
+                <label class="consent" for="adConsent">
+                    <input type="checkbox" id="adConsent" required>
+                    <span>
+                        <span data-i18n="consent_text">J'accepte les</span>
+                        <a href="#" data-legal="terms" data-i18n="terms_link">conditions d'utilisation</a>
+                        <span data-i18n="consent_end">et je confirme que les informations de mon annonce sont exactes.</span>
+                    </span>
+                </label>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" id="submitAdButton" class="button button-primary"
+                        data-i18n="submit_ad">
+                    Publier l'annonce
+                </button>
+
+                <button type="button" id="cancelEditButton"
+                        class="button button-secondary" hidden
+                        data-i18n="cancel_edit">
+                    Annuler la modification
+                </button>
+            </div>
+
+            <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+
+        </form>
+
+    </section>
+
+    <!-- SÉCURITÉ -->
+    <section class="info-section security-section" id="securite">
+
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow" data-i18n="security_eyebrow">VOTRE SÉCURITÉ COMPTE</p>
+                <h2 data-i18n="security_title">Achetez et vendez avec prudence</h2>
+                <p class="section-description" data-i18n="security_description">
+                    Quelques précautions peuvent vous aider à éviter les mauvaises surprises.
+                </p>
+            </div>
+        </div>
+
+        <div class="tips-grid">
+
+            <article class="tip">
+                <span class="tip-icon">01</span>
+                <h3 data-i18n="tip1_title">Rencontrez-vous en lieu public</h3>
+                <p data-i18n="tip1_text">Privilégiez un endroit fréquenté. Si possible, faites-vous accompagner.</p>
+            </article>
+
+            <article class="tip">
+                <span class="tip-icon">02</span>
+                <h3 data-i18n="tip2_title">Vérifiez avant de payer</h3>
+                <p data-i18n="tip2_text">Examinez le produit et vérifiez son état avant toute transaction.</p>
+            </article>
+
+            <article class="tip">
+                <span class="tip-icon">03</span>
+                <h3 data-i18n="tip3_title">Méfiez-vous des offres suspectes</h3>
+                <p data-i18n="tip3_text">Faites attention aux prix anormalement bas et aux demandes de paiement urgentes.</p>
+            </article>
+
+            <article class="tip">
+                <span class="tip-icon">04</span>
+                <h3 data-i18n="tip4_title">Protégez vos informations</h3>
+                <p data-i18n="tip4_text">Ne partagez jamais vos mots de passe, codes SMS ou documents personnels.</p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section class="info-section about" id="apropos">
+
+        <p class="eyebrow" data-i18n="about_eyebrow">NOTRE PLATEFORME</p>
+        <h2 data-i18n="about_title">À propos de Haïtistore / Market</h2>
+
+        <p data-i18n="about_text">
+            Haïtistore / Market est un projet de plateforme de petites annonces
+            destiné au public haïtien. Notre objectif est de faciliter la découverte
+            de produits et de services dans différentes catégories : immobilier,
+            électronique, véhicules, vêtements, maison, emplois et bien plus.
+            Nous souhaitons proposer une expérience simple, accessible et
+            transparente, afin de faciliter les échanges entre acheteurs et vendeurs.
+        </p>
+
+    </section>
+
+</main>
+
+<!-- PIED DE PAGE -->
+<footer class="site-footer">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+            <a class="footer-logo" href="#accueil">
+                <span class="logo-mark">H</span>
+                Haïtistore / Market
+            </a>
+            <p data-i18n="footer_description">
+                Les petites annonces en Haïti. Découvrez, proposez et échangez.
+            </p>
+        </div>
+
+        <div class="footer-column">
+            <h3 data-i18n="footer_navigation">Navigation</h3>
+            <a href="#accueil" data-i18n="nav_home">Accueil</a>
+            <a href="#annonces" data-i18n="nav_ads">Annonces</a>
+            <a href="#categories" data-i18n="nav_categories">Catégories</a>
+            <a href="#publier" data-i18n="nav_publish">Publier une annonce</a>
+            <a href="#favoris" data-i18n="nav_favorites">Mes favoris</a>
+        </div>
+
+        <div class="footer-column">
+            <h3 data-i18n="footer_information">Informations</h3>
+            <a href="#apropos" data-i18n="about_title">À propos</a>
+            <a href="#securite" data-i18n="nav_security">Sécurité</a>
+            <a href="#" data-legal="terms" data-i18n="terms_link">Conditions d'utilisation</a>
+            <a href="#" data-legal="privacy" data-i18n="privacy_link">Confidentialité</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>
+            © <span id="currentYear">2026</span>
+            Haïtistore / Market. Tous droits réservés.
+        </p>
+        <p class="footer-small" data-i18n="footer_local">
+            Version locale de démonstration.
+        </p>
+    </div>
+
+</footer>
+
+<!-- FENÊTRE DES DÉTAILS D'UNE ANNONCE -->
+<div class="modal" id="detailsModal" role="dialog"
+     aria-modal="true" aria-labelledby="detailsTitle" hidden>
+
+    <div class="modal-backdrop" data-close-details></div>
+
+    <div class="modal-content details-content">
+
+        <button class="modal-close" id="closeDetails" type="button" aria-label="Fermer">×</button>
+
+        <div id="detailsGallery" class="details-gallery"></div>
+
+        <div class="details-body">
+            <span id="detailsCategory" class="category-label"></span>
+            <h2 id="detailsTitle"></h2>
+            <p id="detailsPrice" class="details-price"></p>
+            <p id="detailsCity" class="details-city"></p>
+            <p id="detailsDescription" class="details-description"></p>
+
+            <a id="detailsWhatsapp" class="button button-whatsapp details-whatsapp"
+               href="#" target="_blank" rel="noopener noreferrer" hidden>
+                Contacter sur WhatsApp
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<!-- AGRANDISSEMENT DES PHOTOS -->
+<div class="image-viewer" id="imageViewer" role="dialog"
+     aria-modal="true" aria-label="Photo agrandie" hidden>
+
+    <button class="viewer-close" id="closeViewer" type="button" aria-label="Fermer">×</button>
+    <button class="viewer-arrow viewer-prev" id="prevViewer" type="button" aria-label="Photo précédente">‹</button>
+
+    <img id="viewerImage" src="" alt="Photo agrandie">
+
+    <button class="viewer-arrow viewer-next" id="nextViewer" type="button" aria-label="Photo suivante">›</button>
+    <p id="viewerCounter" class="viewer-counter"></p>
+
+</div>
+
+<!-- CONDITIONS ET CONFIDENTIALITÉ -->
+<div class="modal" id="legalModal" role="dialog"
+     aria-modal="true" aria-labelledby="legalTitle" hidden>
+
+    <div class="modal-backdrop" data-close-legal></div>
+
+    <div class="modal-content legal-content">
+        <button class="modal-close" id="closeLegal" type="button" aria-label="Fermer">×</button>
+        <div class="details-body">
+            <h2 id="legalTitle"></h2>
+            <div id="legalBody"></div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+</script>
+
+</body>
+</html>
